@@ -16,7 +16,6 @@ function onFormInput(event) {
 }
 
 function onFormSubmit(event) {
-  // console.log(formData);
   event.preventDefault();
 
   const emeil = document.querySelector('input');
@@ -26,7 +25,7 @@ function onFormSubmit(event) {
   } else {
     form.reset();
     localStorage.removeItem(LOCALSTORAGE_KEY);
-    formData = {};
+    // formData = {};
     console.log(formData);
   }
 }
