@@ -11,7 +11,7 @@ function onPlay({ seconds }) {
   localStorage.setItem(LOCALSTORAGE_KEY, seconds);
 }
 
-function timeHandler(currentTime) {
+function onTimeHandler(currentTime) {
   if (currentTime) {
     parsedCurrentTime = JSON.parse(currentTime);
   } else {
@@ -20,5 +20,5 @@ function timeHandler(currentTime) {
 }
 
 player.on('timeupdate', throttle(onPlay, 1000));
-player.setCurrentTime(localStorage.getItem(LOCALSTORAGE_KEY));
-timeHandler(currentTime);
+onTimeHandler(currentTime);
+player.setCurrentTime(parsedCurrentTime);
